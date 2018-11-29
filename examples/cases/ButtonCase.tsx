@@ -14,6 +14,7 @@ export default class ButtonCase extends React.PureComponent {
                     <Button theme="success">Success</Button>
                     <Button theme="warning">Warning</Button>
                     <Button theme="danger">Danger</Button>
+                    <Button style={{width:187}}>width:187px</Button>
                 </div>
                 <div className="CasePanel">
                     <Button theme="primary" block={true}>Block Button</Button>

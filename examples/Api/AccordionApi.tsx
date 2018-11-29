@@ -105,6 +105,11 @@ export default class AccordionCase extends React.PureComponent< AccordionCasePro
                 desc: '面板切换的回调',
                 type: '(index: number): void',
                 default: 'noop',
+            }, {
+                attr: 'style',
+                desc: '样式',
+                type: 'object',
+                default: '-',
             }],
         }, {
             name: 'Accordion',
@@ -119,6 +124,11 @@ export default class AccordionCase extends React.PureComponent< AccordionCasePro
                 desc: '是否禁用',
                 type: 'Boolean',
                 default: false,
+            }, {
+                attr: 'style',
+                desc: '样式',
+                type: 'object',
+                default: '-',
             }],
         }];
         return (

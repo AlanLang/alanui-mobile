@@ -33,23 +33,38 @@ export default class NavBarCase extends React.PureComponent< NavBarCaseProps, an
         );
         return (
             <Content className={styleClass} {...other}>
-                <section className="CasePanel">
-                    <NavBar left={<Button>
+                <NavBar
+                    left={<Button>
                         <Icon icon="menu"/>
-                    </Button>} center="NavBar" right={<Button>
+                    </Button>}
+                    center="NavBar"
+                    right={<Button>
                         <Icon icon="more_vert"/>
-                    </Button>}/>
-                </section>
-                <section className="CasePanel">
-                    <NavBar left={<div className="Row">
+                    </Button>}
+                />
+                <NavBar
+                    left={<div className="Row">
                         <Button>
                             <Icon icon="menu"/>
                         </Button>
                         <span className="padding-left-10 Row pull-center">NavBar</span>
-                    </div>} right={<Button>
-                        <Icon icon="more_vert"/>
-                    </Button>}/>
-                </section>
+                    </div>}
+                    right={<Button>
+                    <Icon icon="more_vert"/>
+                </Button>}
+                />
+                <NavBar
+                    style={{backgroundColor:'red'}}
+                    left={<div className="Row">
+                        <Button>
+                            <Icon icon="menu"/>
+                        </Button>
+                        <span className="padding-left-10 Row pull-center">红色</span>
+                    </div>}
+                    right={<Button>
+                    <Icon icon="more_vert"/>
+                </Button>}
+                />
             </Content>
         );
     }
@@ -100,6 +115,11 @@ export default class NavBarCase extends React.PureComponent< NavBarCaseProps, an
                 attr: 'right',
                 desc: '导航右边内容',
                 type: 'React.ReactNode | string',
+                default: '-',
+            }, {
+                attr: 'style',
+                desc: '样式',
+                type: 'object',
                 default: '-',
             }],
         }];

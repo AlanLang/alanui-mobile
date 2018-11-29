@@ -51,7 +51,7 @@ export default class Accordion extends React.PureComponent<AccordionProps, Accor
     }
 
     render() {
-        const { children, className, disableRipple, index, header, prefixCls } = this.props;
+        const { children, className, disableRipple, index, header, prefixCls, style } = this.props;
         const { expanded } = this.state;
         const styleClass = classNames(
             prefixCls,
@@ -61,7 +61,7 @@ export default class Accordion extends React.PureComponent<AccordionProps, Accor
             className,
         );
         return (
-            <div className={styleClass}>
+            <div className={styleClass} style={style}>
                 <div className="bm-AccordionHeader" onClick={this.handleToggle}>
                     <div className="bm-AccordionHeader-toggle">
                         {header}

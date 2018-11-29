@@ -18,7 +18,7 @@ export default class PhoneView extends React.PureComponent<PhoneViewProps, {}> {
             prefixCls, className,
         );
         return (
-            <div className={styleClass}>
+            <div>
                 <div className="device-header">
                     <div className="device-nav">
                         <span className="device-nav-dian">.....</span>

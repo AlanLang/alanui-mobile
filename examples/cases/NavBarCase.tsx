@@ -38,6 +38,18 @@ export default class NavBarCase extends React.PureComponent<NavBarCaseProps, any
                     <Icon icon="more_vert"/>
                 </Button>}
                 />
+                <NavBar
+                    style={{backgroundColor:'red'}}
+                    left={<div className="Row">
+                        <Button>
+                            <Icon icon="menu"/>
+                        </Button>
+                        <span className="padding-left-10 Row pull-center">红色</span>
+                    </div>}
+                    right={<Button>
+                    <Icon icon="more_vert"/>
+                </Button>}
+                />
             </Content>
         );
     }

@@ -18,6 +18,7 @@ export interface ButtonProps extends BaseProps {
     round?: boolean;
     size?: BUTTON_SIZES;
     target?: string;
+    style?: object;
     theme?: BUTTON_TYPES;
     onClick?: (event: any) => void;
     onTouchStart?: (event: any) => void;

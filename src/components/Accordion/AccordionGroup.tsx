@@ -64,7 +64,7 @@ export default class AccordionGroup extends React.PureComponent<AccordionGroupPr
     render() {
         const {
             children: childrenProp, className,
-            closeOthers, disableRipple, prefixCls,
+            closeOthers, disableRipple, prefixCls, style,
         } = this.props;
         const styleClass = classNames(
             prefixCls, className,
@@ -84,7 +84,7 @@ export default class AccordionGroup extends React.PureComponent<AccordionGroupPr
             });
         });
         return (
-            <div className={styleClass}>
+            <div className={styleClass} style={style}>
                 {children}
             </div>
         );
