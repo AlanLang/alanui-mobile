@@ -1,0 +1,57 @@
+$toast-prefix: Toast;
+
+.Message.#{$toast-prefix}-group {
+  .Message-mask {
+    background: transparent;
+  }
+}
+
+.#{$toast-prefix} {
+  .MessageItem-inner {
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    font-size: 14px;
+  }
+
+  .#{$toast-prefix}-item {
+    &.#{$toast-prefix}-info {
+      background: $info;
+      color: #fff;
+    }
+    &.#{$toast-prefix}-success {
+      background: $success;
+      color: #fff;
+    }
+    &.#{$toast-prefix}-warning {
+      background: $warning;
+      color: #fff;
+    }
+    &.#{$toast-prefix}-error {
+      background: $error;
+      color: #fff;
+    }
+  }
+}
+
+.#{$toast-prefix}-group {
+  .MessageItem {
+    position: absolute;
+    left: 50%;
+  }
+  .#{$toast-prefix}-center.MessageItem {
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .#{$toast-prefix}-top.MessageItem {
+    top: 50px;
+    transform: translate3d(-50%, 0, 0);
+  }
+  .#{$toast-prefix}-bottom.MessageItem {
+    bottom: 50px;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

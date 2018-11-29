@@ -1,0 +1,55 @@
+$highlightcode-prefix: bm-HighlightCode;
+
+.#{$highlightcode-prefix} {
+  position: relative;
+
+  code {
+    border-radius: 4px;
+  }
+
+  .#{$highlightcode-prefix}-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    opacity: 0;
+    color: #fff;
+    z-index: 100;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+    border-radius: 3px;
+    transition: opacity .3s;
+  }
+
+  &:hover .#{$highlightcode-prefix}-btn {
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &[lang]:before {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: rgba(255, 255, 255, .5);
+    opacity: .5;
+    font-size: 13px;
+  }
+
+  &[lang="html"]:before {
+    content: "HTML";
+  }
+
+  &[lang="javascript"]:before {
+    content: "Javascript";
+  }
+
+  &[lang="typescript"]:before {
+    content: "Typescript";
+  }
+
+  &[lang="css"]:before {
+    content: "CSS";
+  }
+}

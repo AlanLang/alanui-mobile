@@ -1,0 +1,109 @@
+$searchbar-prefix: bm-SearchBar;
+
+.#{$searchbar-prefix} {
+  padding: 8px 0;
+  overflow: hidden;
+  align-items: center;
+
+  &.#{$searchbar-prefix}-active .#{$searchbar-prefix}-cancel {
+    margin-right: 0;
+    opacity: 1;
+  }
+
+  &.#{$searchbar-prefix}-active .#{$searchbar-prefix}-cancel + .#{$searchbar-prefix}-input {
+    margin-right: 50px;
+  }
+
+  .#{$searchbar-prefix}-cancel {
+    margin-right: -60px;
+    width: 44px;
+    float: right;
+    height: 35px;
+    opacity: 0;
+    line-height: 35px;
+    text-align: center;
+    transition: all .3s;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .#{$searchbar-prefix}-clear {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: none !important;
+    z-index: 3;
+    width: 15px;
+    height: 15px;
+    padding: 6.5px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2028'><circle%20cx%3D'14'%20cy%3D'14'%20r%3D'14'%20fill%3D'%23ccc'%2F><line%20stroke%3D'%23ffffff'%20stroke-width%3D'2'%20stroke-miterlimit%3D'10'%20x1%3D'8'%20y1%3D'8'%20x2%3D'20'%20y2%3D'20'%2F><line%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'2'%20stroke-miterlimit%3D'10'%20x1%3D'20'%20y1%3D'8'%20x2%3D'8'%20y2%3D'20'%2F><%2Fsvg>");
+    transform: translate(0, -50%);
+    transition: all .3s;
+
+    &.#{$searchbar-prefix}-clear-show {
+      display: block !important;
+    }
+  }
+
+  .#{$searchbar-prefix}-input {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    margin-right: 0;
+    transition: all .3s;
+
+    .bm-Icon {
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      z-index: 20;
+      font-size: 20px;
+      color: #b4b4b4;
+      padding: 10px 2px;
+      line-height: 24px;
+      transform: translate3D(0, -50%, 0);
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 35px;
+      display: block;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 5px;
+      font-family: inherit;
+      color: #3d4145;
+      font-size: 14px;
+      font-weight: normal;
+      padding: 0 10px;
+      background-color: #fff;
+      border: 1px solid $inputBorderColor;
+
+      &::-webkit-input-placeholder {
+        color: #ccc;
+        opacity: 1;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+    }
+
+    label + input {
+      padding-left: 35px;
+    }
+  }
+}

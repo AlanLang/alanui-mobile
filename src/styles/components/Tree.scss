@@ -1,0 +1,94 @@
+$tree-prefix: bm-Tree;
+
+.#{$tree-prefix} {
+
+  .#{$tree-prefix}-inner {
+    > .#{$tree-prefix}Item {
+      padding-left: 0 !important;
+    }
+  }
+
+  ul.#{$tree-prefix}Item-children,
+  ul.#{$tree-prefix}-inner {
+    padding: 0;
+  }
+
+  .#{$tree-prefix}Item {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    &.#{$tree-prefix}Item-leaf > .#{$tree-prefix}Item-content > .#{$tree-prefix}Item-toggle {
+      visibility: hidden;
+    }
+
+    .#{$tree-prefix}Item-checkbox-icon {
+      margin-right: 8px;
+      i {
+        display: block;
+      }
+    }
+
+    .#{$tree-prefix}Item-content,
+    .#{$tree-prefix}Item-label {
+      display: flex;
+      align-items: center;
+    }
+
+    .#{$tree-prefix}Item-label {
+      svg {
+        display: block;
+      }
+    }
+
+    .#{$tree-prefix}Item-content {
+      &.#{$tree-prefix}Item-content-selected {
+        .#{$tree-prefix}Item-menu-label {
+          color: $treeActiveColor;
+        }
+      }
+    }
+
+    .#{$tree-prefix}Item-menu-label {
+      margin-left: 15px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .#{$tree-prefix}Item-toggle {
+      vertical-align: middle;
+      color: inherit;
+      outline: none;
+      width: 24px;
+      height: 24px;
+      background: none;
+      margin: 0 8px;
+      border: none;
+      padding: 0;
+      position: relative;
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+
+      &.#{$tree-prefix}Item-expanded {
+        span {
+          transform: rotate(0);
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        transform: rotate(-90deg);
+        transition: transform 150ms;
+      }
+    }
+  }
+}

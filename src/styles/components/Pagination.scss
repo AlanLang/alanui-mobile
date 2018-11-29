@@ -1,0 +1,105 @@
+$pagination-prefix: bm-Pagination;
+
+.#{$pagination-prefix} {
+  display: flex;
+  justify-content: center;
+
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    box-sizing: border-box;
+
+    li {
+      list-style: none;
+      box-sizing: border-box;
+    }
+  }
+
+  &.#{$pagination-prefix}-circle {
+    .#{$pagination-prefix}Item {
+      > .#{$pagination-prefix}Item-btn {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .#{$pagination-prefix}Item {
+    margin: 0 2px;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+
+    .#{$pagination-prefix}-ellipsis {
+      display: block;
+      &:before {
+        content: "\2022\2022\2022";
+        display: block;
+        letter-spacing: 2px;
+        color: $paginationEllipsisColor;
+        text-align: center;
+      }
+    }
+
+    .#{$pagination-prefix}-backward,
+    .#{$pagination-prefix}-forward,
+    .#{$pagination-prefix}-arrow {
+      display: block;
+      width: 28px;
+      height: 28px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        color: $paginationColor;
+      }
+    }
+
+    > .#{$pagination-prefix}Item-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16px;
+      text-decoration: none;
+      box-sizing: border-box;
+      border-radius: 4px;
+      overflow: hidden;
+      color: $paginationColor;
+      fill: currentColor;
+      background: $paginationBg;
+      @include headerShadow;
+      background-origin: border-box;
+      cursor: pointer;
+      transition: all .25s;
+
+      .#{$pagination-prefix}-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+      }
+    }
+
+    &.#{$pagination-prefix}Item-active > span {
+      color: $paginationActiveColor;
+      background: $paginationActiveBg;
+
+      &:hover {
+        cursor: auto;
+      }
+    }
+
+    &:not(.#{$pagination-prefix}Item-active) > span {
+      &:hover {
+        background: #eee;
+      }
+    }
+
+    &.#{$pagination-prefix}Item-disabled > span {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  }
+}

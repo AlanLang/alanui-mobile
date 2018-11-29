@@ -1,0 +1,91 @@
+$alert-prefix: bm-Alert;
+
+.#{$alert-prefix} {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+
+  .#{$alert-prefix}-title {
+    font-size: 14px;
+    display: block;
+    color: rgba(0,0,0,.85);
+  }
+
+  .#{$alert-prefix}-desc {
+    display: block;
+    font-size: 12px;
+    color: rgba(0,0,0,.65);
+  }
+
+  .#{$alert-prefix}-icon {
+    font-size: 14px;
+    padding-right: 10px;
+    font-style: normal;
+  }
+
+  .#{$alert-prefix}-with-desc {
+    padding: 16px;
+  }
+
+  &.#{$alert-prefix}-with-close {
+    padding-right: 48px;
+  }
+
+  .#{$alert-prefix}-close {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    font-style: normal;
+
+    .bm-Icon {
+      font-size: 12px;
+    }
+  }
+
+  &.#{$alert-prefix}-with-icon.#{$alert-prefix}-with-desc {
+    .#{$alert-prefix}-icon {
+      font-size: 28px;
+      padding-right: 16px;
+    }
+  }
+
+  &.#{$alert-prefix}-success {
+    border: 1px solid #d1f2e1;
+    background-color: #e8f9f0;
+
+    .#{$alert-prefix}-icon {
+      color: #19be6b
+    }
+  }
+
+  &.#{$alert-prefix}-info {
+    border: 1px solid #d5e8fc;
+    background-color: #eaf4fe;
+
+    .#{$alert-prefix}-icon {
+      color: #2d8cf0
+    }
+  }
+
+  &.#{$alert-prefix}-warning {
+    border: 1px solid #ffebcc;
+    background-color: #fff5e6;
+
+    .#{$alert-prefix}-icon {
+      color: #f90
+    }
+  }
+
+  &.#{$alert-prefix}-error {
+    border: 1px solid #fbd9d0;
+    background-color: #fdece8;
+
+    .#{$alert-prefix}-icon {
+      color: #ed3f14
+    }
+  }
+}

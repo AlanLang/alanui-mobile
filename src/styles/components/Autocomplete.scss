@@ -1,0 +1,30 @@
+$autocomplete-prefix: bm-Autocomplete;
+
+.#{$autocomplete-prefix} {
+  position: relative;
+
+  .#{$autocomplete-prefix}-menus {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    display: none;
+    @include boxShadow();
+
+    &.#{$autocomplete-prefix}-scroll {
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    &.#{$autocomplete-prefix}-menus-active {
+      display: block;
+    }
+  }
+
+  &.#{$autocomplete-prefix}-inline {
+    .#{$autocomplete-prefix}-menus {
+      position: relative;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+$modal-prefix: bm-Modal;
+
+.#{$modal-prefix} {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  .bm-ZoomIn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .#{$modal-prefix}-header {
+    position: relative;
+    padding: 8px 14px;
+    border-radius: 4px 4px 0 0;
+    background: #fff;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.65);
+    border-bottom: 1px solid #e8e8e8;
+
+    .#{$modal-prefix}-close-x {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      min-width: 36px;
+      padding: 0;
+      color: rgba(0, 0, 0, 0.45);
+      box-shadow: none;
+      font-size: 15px;
+      transform: translate(0, -50%);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+          content: "clear";
+          font-family: 'Material Icons';
+        }
+      }
+    }
+  }
+
+  .#{$modal-prefix}-header:empty {
+    display: none;
+  }
+
+  &,
+  & .#{$modal-prefix}-backdrop {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .#{$modal-prefix}-backdrop {
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    z-index: 10;
+  }
+
+  .#{$modal-prefix}-content {
+    position: relative;
+    top: 100px;
+    left: 0;
+    margin: 0 auto;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 5px;
+    z-index: 11;
+  }
+
+  &.#{$modal-prefix}-max {
+    .#{$modal-prefix}-panel {
+      overflow: auto;
+    }
+  }
+}
+
+.bm-ios {
+  .#{$modal-prefix} {
+    position: absolute;
+  }
+}

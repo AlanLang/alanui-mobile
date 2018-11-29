@@ -1,0 +1,128 @@
+$list-prefix: bm-List;
+
+.#{$list-prefix} {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid $listBorderColor;
+  border-bottom: 1px solid $listBorderColor;
+
+  .#{$list-prefix}-item {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+    &:first-child:last-child:after {
+      background: transparent;
+    }
+
+    &.#{$list-prefix}-item-avatar-right {
+      .bm-Avatar {
+        order: 5;
+        margin: 0 0 0 16px;
+      }
+    }
+
+    .#{$list-prefix}-item-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px 20px;
+      min-height: 44px;
+      background: $listBg;
+      transition: all .3s;
+      width: 100%;
+      box-sizing: border-box;
+
+      > a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+      }
+    }
+
+    &:not(:first-child):last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 0;
+      height: 1px;
+      background: $listBorderColor;
+    }
+
+    &:active {
+      background: transparent;
+    }
+
+    .#{$list-prefix}-item-text {
+      flex: 1 1 auto;
+      color: $defaultColor;
+      overflow: hidden;
+      box-sizing: border-box;
+
+      + .#{$list-prefix}ItemAction {
+        .bm-Icon {
+          margin-right: 0;
+          color: $listIconColor;
+          vertical-align: middle;
+        }
+      }
+
+      > a {
+        box-sizing: border-box;
+        color: $defaultColor;
+      }
+    }
+
+    .#{$list-prefix}ItemAction {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .bm-Avatar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+      font-size: 25px;
+      user-select: none;
+      margin-right: 16px;
+    }
+
+    .#{$list-prefix}-item-btn {
+
+      > .bm-Icon {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        color: #999;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &.#{$list-prefix}-avatar-right {
+    .#{$list-prefix}-item {
+      .bm-Avatar {
+        order: 5;
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+}

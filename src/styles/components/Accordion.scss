@@ -1,0 +1,75 @@
+$accordion-prefix: bm-Accordion;
+
+.#{$accordion-prefix}Group {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  border-top: none;
+
+  .#{$accordion-prefix} {
+    background: #fff;
+
+    .#{$accordion-prefix}Header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    &.#{$accordion-prefix}-disabled {
+      .#{$accordion-prefix}-toggle {
+        cursor: not-allowed;
+      }
+    }
+
+    &.#{$accordion-prefix}-expanded {
+      .#{$accordion-prefix}-content {
+        overflow: visible;
+      }
+
+      .#{$accordion-prefix}Header-toggle {
+        color: $accordionHeaderActiveColor;
+        &:after {
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+    }
+
+    .#{$accordion-prefix}Header-toggle {
+      display: flex;
+      align-items: center;
+      position: relative;
+      min-height: 36px;
+      padding: 10px 20px;
+      color: $accordionHeaderColor;
+      cursor: pointer;
+      background: $accordionHeaderBg;
+      border-top: 1px solid $accordionHeaderBorder;
+      user-select: none;
+      box-sizing: border-box;
+
+      &:after {
+        font: normal normal normal 16px/1 'Material Icons';
+        content: "expand_more";
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        color: $accordionHeaderColor;
+        text-align: center;
+        line-height: 20px;
+        transform: translate(0, -50%);
+        transition: all .2s linear;
+      }
+    }
+
+    .#{$accordion-prefix}Content {
+      position: relative;
+      overflow: hidden;
+      transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+      .#{$accordion-prefix}ContentInner {
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+
+  }
+}

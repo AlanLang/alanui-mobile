@@ -1,0 +1,6 @@
+$backtop-prefix: bm-BackTop;
+
+.#{$backtop-prefix} {
+  position: fixed;
+  z-index: 10;
+}

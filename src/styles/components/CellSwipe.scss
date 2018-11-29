@@ -1,0 +1,47 @@
+$cellswipe-prefix: bm-CellSwipe;
+
+.#{$cellswipe-prefix} {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  .#{$cellswipe-prefix}-wrapper {
+    flex: 1 0 100%;
+  }
+
+  .#{$cellswipe-prefix}-content {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background-image: linear-gradient(180deg,#d9d9d9,#d9d9d9 50%,transparent 0);
+    background-size: 120% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-origin: content-box;
+
+    .#{$cellswipe-prefix}-mask {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: transparent;
+    }
+  }
+
+  .#{$cellswipe-prefix}-left,
+  .#{$cellswipe-prefix}-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .#{$cellswipe-prefix}-left {
+    right: 100%;
+  }
+
+  .#{$cellswipe-prefix}-right {
+    left: 100%;
+  }
+}

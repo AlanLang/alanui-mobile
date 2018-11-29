@@ -1,0 +1,143 @@
+$slider-prefix: bm-Slider;
+
+.#{$slider-prefix} {
+  display: flex;
+  align-items: center;
+
+  &.#{$slider-prefix}-disabled {
+    opacity: .5;
+  }
+
+  .#{$slider-prefix}-wrapper {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .#{$slider-prefix}-start,
+  .#{$slider-prefix}-end {
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$slider-prefix}-start {
+    padding-right: 10px;
+  }
+
+  .#{$slider-prefix}-end {
+    padding-left: 10px;
+  }
+
+  &.#{$slider-prefix}-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 18px;
+    height: 150px;
+
+    .#{$slider-prefix}-start,
+    .#{$slider-prefix}-end {
+      padding: 0;
+    }
+
+    .#{$slider-prefix}-start {
+      padding-bottom: 10px;
+    }
+
+    .#{$slider-prefix}-end {
+      padding-top: 10px;
+    }
+
+    .#{$slider-prefix}-bar {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      transform: translate3d(-50%, 0, 0);
+    }
+
+    .#{$slider-prefix}-bar-active {
+      height: auto;
+      top: 100%;
+    }
+
+    .#{$slider-prefix}-knob-handle {
+      top: 100%;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .#{$slider-prefix}-slider-tooltip {
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 5px 10px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    text-shadow: 0 1px 0 #f3f3f3;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .#{$slider-prefix}-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 15px;
+    background: $sliderColor;
+    pointer-events: none;
+    transform: translate(0, -50%);
+  }
+  .#{$slider-prefix}-bar-active {
+    bottom: 0;
+    width: auto;
+    background: $sliderActiveColor;
+  }
+
+  .#{$slider-prefix}-knob-handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    transform: translate(0, -50%);
+  }
+
+  .#{$slider-prefix}-knob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: $sliderKnobColor;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    transition: all .18s ease;
+
+    &.active {
+      transform: scale(1.5);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: all .25s;
+    }
+  }
+}

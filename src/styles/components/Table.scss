@@ -1,0 +1,70 @@
+$table-prefix: bm-Table;
+
+.#{$table-prefix} {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+
+  .#{$table-prefix}-head {
+    display: flex;
+    align-items: center;
+
+    &.#{$table-prefix}-head-active {
+      color: rgba(0, 0, 0, 0.87);
+
+      .Icon {
+        color: rgba(0, 0, 0, 0.87);
+      }
+    }
+
+    .Icon {
+      padding-right: 5px;
+      transition: all .3s;
+
+      &.#{$table-prefix}-head-sort {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .#{$table-prefix}-cell {
+    > .Checkbox {
+      padding: 0;
+    }
+  }
+
+}
+
+.#{$table-prefix}-bordered, .#{$table-prefix}-bordered td, .#{$table-prefix}-bordered th {
+  border: 1px solid rgba(224, 224, 224, 1);
+}
+
+.#{$table-prefix} td, .#{$table-prefix} th {
+  padding: 15px;
+  vertical-align: top;
+}
+
+.#{$table-prefix} td {
+  border-top: 1px solid rgba(224, 224, 224, 1);
+}
+
+.#{$table-prefix} thead th {
+  color: rgba(0, 0, 0, 0.54);
+  position: relative;
+  font-weight: 600;
+  background: #F7F7F7;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.#{$table-prefix}-bordered thead td, .#{$table-prefix}-bordered thead th {
+  border-bottom-width: 2px;
+}
+
+.#{$table-prefix}-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+.#{$table-prefix} tbody .#{$table-prefix}-row:hover .#{$table-prefix}-cell {
+  background-color: #eee
+}

@@ -1,0 +1,246 @@
+$button-prefix: bm-Button;
+
+a, a:visited, a:link, a:active, a:hover {
+  outline: none;
+}
+
+a:not(.#{$button-prefix}):visited, a:not(.#{$button-prefix}):link, a:not(.#{$button-prefix}):active {
+  color: $primary;
+  text-decoration: none; }
+
+button {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.#{$button-prefix} {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  touch-action: manipulation;
+  background-image: none;
+  white-space: nowrap;
+  padding: 8px 16px;
+  font-size: 14px;
+  min-height: 36px;
+  min-width: 88px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  line-height: 1;
+  user-select: none;
+  text-decoration: none;
+  transition: .3s cubic-bezier(.25,.8,.5,1);
+
+  &:before {
+    display: none;
+    background-color: transparent;
+    content: " ";
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+
+ &:hover {
+    text-decoration: none;
+    opacity: .8;
+  }
+
+  &[type="button"] {
+    appearance: none;
+  }
+
+  &.#{$button-prefix}-float {
+    position: absolute;
+    z-index: 9999;
+
+    &.#{$button-prefix}-bottom-right {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    &.#{$button-prefix}-top-right {
+      top: 20px;
+      right: 20px;
+    }
+
+    &.#{$button-prefix}-bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    &.#{$button-prefix}-top-left {
+      top: 20px;
+      left: 20px;
+    }
+  }
+
+  &, &:focus, &:active, &:hover {
+    outline: none;
+    border: none;
+  }
+
+  &:not(.is-disabled) {
+    &:active, &.is-active {
+      -webkit-box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+      box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)
+    }
+  }
+
+  &.#{$button-prefix}-round {
+    border-radius: 20px;
+  }
+
+  &.#{$button-prefix}-block {
+    display: flex;
+    width: 100%;
+  }
+
+  &.#{$button-prefix}-lg {
+    padding: 8px 24px;
+    min-width: 112px;
+    font-size: 16px;
+    min-height: 40px;
+
+    &.#{$button-prefix}-fab {
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      line-height: 40px;
+    }
+  }
+
+  &.#{$button-prefix}-sm {
+    padding: 7px 8px;
+    min-width: 64px;
+    font-size: 13px;
+    min-height: 32px;
+
+    &.#{$button-prefix}-fab {
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      line-height: 32px;
+    }
+  }
+
+}
+.#{$button-prefix},
+.#{$button-prefix}-group {
+  @include boxShadow();
+}
+
+.#{$button-prefix}.is-flat,
+.#{$button-prefix}-group.is-flat{
+  box-shadow: none !important;
+}
+
+.#{$button-prefix}-fab {
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.#{$button-prefix}-default {
+  color: $dark;
+  background-color: #fff;
+}
+
+.#{$button-prefix}-primary,
+.#{$button-prefix}-success,
+.#{$button-prefix}-info,
+.#{$button-prefix}-warning,
+.#{$button-prefix}-danger {
+  color: white;
+}
+
+@each $name, $color in $theme {
+  .#{$button-prefix}.#{$button-prefix}-#{$name} {
+    background-color: $color;
+  }
+}
+
+.#{$button-prefix}.#{$button-prefix}-danger {
+  background-color: $error;
+}
+
+.#{$button-prefix}-group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  > .#{$button-prefix} {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  > .#{$button-prefix}:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  > .#{$button-prefix}:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+}
+
+.#{$button-prefix}.#{$button-prefix}-block {
+  display: block;
+}
+
+.#{$button-prefix}.is-disabled,
+.#{$button-prefix}[disabled] {
+  border: 1px solid #d9d9d9;
+  cursor: not-allowed;
+  opacity: .65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.#{$button-prefix} i.#{$button-prefix}-left {
+  padding-right: 5px;
+}
+
+.#{$button-prefix} i.#{$button-prefix}-right {
+  padding-left: 5px;
+}
+
+.is-flat {
+
+  &.#{$button-prefix} {
+    border: 1px solid transparent;
+  }
+
+  &.#{$button-prefix}-default {
+    color: $dark;
+    background-color: transparent;
+    border-color: $dark;
+  }
+
+  @each $name, $color in $theme {
+    &.#{$button-prefix}-#{$name} {
+      color: $color;
+      background-color: transparent;
+      border-color: $color;
+    }
+  }
+}
