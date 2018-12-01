@@ -24,7 +24,7 @@ export default class Button extends React.PureComponent<ButtonProps, any> {
     render() {
         const {
             disableRipple, to, shape, flat, float, theme, size, block,
-            isActive, disabled, className, children, prefixCls, type, target,style
+            isActive, disabled, className, children, prefixCls, type, target,...other
         } = this.props;
         const styleClass = classNames(
             prefixCls,
@@ -44,9 +44,9 @@ export default class Button extends React.PureComponent<ButtonProps, any> {
         const props = {
             className: styleClass,
             type: type,
-            style:style,
             target: to && target,
             href: to,
+            ...other
         };
         let ComponentProp = 'button';
         if (this.props.to) {

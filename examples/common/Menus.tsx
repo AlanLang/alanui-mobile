@@ -127,6 +127,11 @@ const MENUS = [{
     path: '/components/infiniteScroll',
     docs: '/docs/infiniteScroll',
 }, {
+    name: 'InputText',
+    icon: 'border_color',
+    path: '/components/inputtext',
+    docs: '/docs/inputtext',
+}, {
     name: 'InputNumber',
     icon: 'iso',
     path: '/components/inputNumber',
@@ -261,11 +266,6 @@ const MENUS = [{
     icon: 'tab',
     path: '/components/tabs',
     docs: '/docs/tabs',
-}, {
-    name: 'Text Field',
-    icon: 'border_color',
-    path: '/components/inputtext',
-    docs: '/docs/inputtext',
 }, {
     name: 'Textarea',
     icon: 'border_color',

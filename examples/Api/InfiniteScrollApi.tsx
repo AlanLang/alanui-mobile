@@ -187,7 +187,7 @@ export default class InfiniteScrollCase extends React.Component<InfiniteScrollCa
         return (
             <Content className={styleClass}>
                 <PageView
-                    title="Content 无限滚动"
+                    title="InfiniteScroll 无限滚动"
                     code={this.getCode()}
                     data={data}
                     app="适用平台：WEB"

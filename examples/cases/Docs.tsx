@@ -99,7 +99,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
     }
 
     handleSelect = (value: any) => {
-        this.props.history.push('/docs/' + value.label);
+        this.props.history.push('/docs/' + value.item.label);
     }
 
     handleClose = () => {
@@ -322,7 +322,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                             center={this.state.title}
                             right={<div className="Docs-navbar-right">
                                 <Autocomplete
-                                    onSelect={this.handleSelect}
+                                    onSelect={this.handleSelect.bind(this)}
                                     maxHeight="300px"
                                     count={-1}
                                     data={suggestions}
