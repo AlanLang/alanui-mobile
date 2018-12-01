@@ -4,7 +4,7 @@
 
 一共拥有50多个组件，已为你需要在项目中使用的很多功能性组件做好准备。
 
-[详细介绍](http://langwenda.com:8100)
+[详细介绍](https://alanui-mobile.netlify.com)
 
 ### 快速上手
 
