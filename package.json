@@ -1,9 +1,9 @@
 {
   "name": "alanui-mobile",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "license": "MIT",
   "description": "UI Components for React",
-  "homepage": "http://langwenda.com:8100",
+  "homepage": "https://alanui-mobile.netlify.com",
   "main": "./index.js",
   "repository": "https://github.com/AlanLang/alanui-mobile.git",
   "author": "Alan",
