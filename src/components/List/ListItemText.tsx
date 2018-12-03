@@ -7,13 +7,13 @@ export default class ListItemText extends React.PureComponent<ListItemTextProps,
         prefixCls: 'bm-List-item-text',
     };
     render() {
-        const { children, className, prefixCls } = this.props;
+        const { children, className, prefixCls,...other } = this.props;
         const styleClass = classNames(
             prefixCls,
             className,
         );
         return (
-            <div className={styleClass}>
+            <div className={styleClass} {...other}>
                 {children}
             </div>
         );

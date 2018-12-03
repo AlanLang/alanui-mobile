@@ -160,15 +160,10 @@ export default class ButtonCase extends React.PureComponent {
                 type: 'String',
                 default: '-',
             }, {
-                attr: 'type',
-                desc: '设置按钮类型，可选值：\'default\' | \'primary\' | \'info\' | \'success\' | \'warning\' | \'danger\'，也可不选',
+                attr: 'theme',
+                desc: '设置按钮主题，可选值：\'default\' | \'primary\' | \'info\' | \'success\' | \'warning\' | \'danger\'，也可不选',
                 type: 'String',
                 default: 'default',
-            }, {
-                attr: 'style',
-                desc: '设置样式，也可不设',
-                type: 'object',
-                default: '-',
             }],
         }];
         return (

@@ -6,5 +6,4 @@ export interface NavBarProps extends BaseProps {
     center?: React.ReactNode | string;
     left?: React.ReactNode | string;
     right?: React.ReactNode | string;
-    style?:object;
 }

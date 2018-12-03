@@ -17,7 +17,7 @@ export default class Alert extends React.PureComponent<AlertProps, AlertState> {
 
     render() {
         const {children, className, showIcon,
-            prefixCls, desc, closable, icon, banner, title}: any = this.props;
+            prefixCls, desc, closable, icon, banner, title, ...other}: any = this.props;
         let type = this.props.type;
         let alertIcon = icon;
         if (!icon && type) {
@@ -52,7 +52,7 @@ export default class Alert extends React.PureComponent<AlertProps, AlertState> {
         );
         const elem = this.closed ? null : (
             <Fade in={!this.closed}>
-            <div className={styleClass}>
+            <div className={styleClass} {...other}>
                 {(showIcon && alertIcon) ? (<span>
                         <i className="bm-Icon bm-Alert-icon">{alertIcon}</i>
                 </span>) : null}

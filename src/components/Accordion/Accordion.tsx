@@ -3,6 +3,7 @@ import * as classNames from 'classnames';
 import { Collapse } from '../Transitions';
 import Ripple from '../Ripple';
 import { AccordionProps, AccordionState } from './PropsType';
+import {getOtherProperties} from '../common/Utils';
 
 export default class Accordion extends React.PureComponent<AccordionProps, AccordionState> {
     static defaultProps: AccordionProps = {
@@ -51,7 +52,7 @@ export default class Accordion extends React.PureComponent<AccordionProps, Accor
     }
 
     render() {
-        const { children, className, disableRipple, index, header, prefixCls, style } = this.props;
+        const { children, className, disableRipple, index, header, prefixCls, ...other } = this.props;
         const { expanded } = this.state;
         const styleClass = classNames(
             prefixCls,
@@ -60,8 +61,9 @@ export default class Accordion extends React.PureComponent<AccordionProps, Accor
             },
             className,
         );
+        const otherProps = getOtherProperties(other, ['']);
         return (
-            <div className={styleClass} style={style}>
+            <div className={styleClass} {...otherProps}>
                 <div className="bm-AccordionHeader" onClick={this.handleToggle}>
                     <div className="bm-AccordionHeader-toggle">
                         {header}

@@ -8,7 +8,6 @@ export interface AccordionProps extends BaseProps {
     header?: React.ReactNode | string;
     index?: number;
     name?: string;
-    style?:object;
     onChange?: (event: any) => {};
 }
 
@@ -20,7 +19,6 @@ export interface AccordionGroupProps extends BaseProps {
     closeOthers?: boolean;
     disableRipple?: boolean;
     activeIndex?: Array<any> | number;
-    style?:object;
     onChange?: (value: any) => void;
 }
 

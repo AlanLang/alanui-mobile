@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import {AccordionGroupProps, AccordionGroupState} from './PropsType';
+import {getOtherProperties} from '../common/Utils';
 
 export default class AccordionGroup extends React.PureComponent<AccordionGroupProps, AccordionGroupState> {
     static defaultProps = {
@@ -64,7 +65,7 @@ export default class AccordionGroup extends React.PureComponent<AccordionGroupPr
     render() {
         const {
             children: childrenProp, className,
-            closeOthers, disableRipple, prefixCls, style,
+            closeOthers, disableRipple, prefixCls, ...other
         } = this.props;
         const styleClass = classNames(
             prefixCls, className,
@@ -83,8 +84,9 @@ export default class AccordionGroup extends React.PureComponent<AccordionGroupPr
                 onChange: this.handleChange,
             });
         });
+        const otherProps = getOtherProperties(other, ['']);
         return (
-            <div className={styleClass} style={style}>
+            <div className={styleClass} {...otherProps}>
                 {children}
             </div>
         );
