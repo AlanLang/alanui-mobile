@@ -8,14 +8,14 @@ export default class ButtonGroup extends React.PureComponent<ButtonGroupProps, {
         prefixCls: 'bm-Button-group',
     };
     render() {
-        const {dir, children, className, prefixCls} = this.props;
+        const {dir, children, className, prefixCls,style} = this.props;
         const styleClass = classNames(
             prefixCls,
             `${prefixCls}-${dir}`,
             className,
         );
         return (
-            <div className={styleClass}>
+            <div className={styleClass} style={style}>
                 {children}
             </div>
         );

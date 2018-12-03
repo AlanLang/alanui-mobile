@@ -26,8 +26,10 @@ export interface ButtonProps extends BaseProps {
     onMouseUp?: (event: any) => void;
     onMouseDown?: (event: any) => void;
     tabIndex?: number;
+    style?:object;
 }
 
 export interface ButtonGroupProps extends BaseProps {
     dir?: string;
+    style?:object;
 }
