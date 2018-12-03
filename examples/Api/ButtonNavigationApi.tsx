@@ -116,6 +116,11 @@ export default class ButtonNavigationCase extends React.PureComponent< ButtonNav
                 desc: '设置图标',
                 type: 'React.ReactNode | string',
                 default: '-',
+            }, {
+                attr: 'selectedIcon',
+                desc: '设置选中状态的图标',
+                type: 'React.ReactNode | string',
+                default: '-',
             }],
         }];
         return (

@@ -15,6 +15,7 @@ export interface ButtonNavigationItemProps extends BaseProps {
     active?: boolean;
     label?: string;
     icon?: React.ReactNode;
+    selectedIcon?:React.ReactNode;
     onClick?: (event: any) => void;
     showLabel?: boolean;
 }

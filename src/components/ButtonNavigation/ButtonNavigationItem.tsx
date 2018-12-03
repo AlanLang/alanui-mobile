@@ -16,7 +16,7 @@ export default class ButtonNavigationItem extends React.PureComponent<ButtonNavi
     }
 
     render() {
-        const {active, children, className, icon, label, onClick, prefixCls, ...other} = this.props;
+        const {active, children, className, icon,selectedIcon, label, onClick, prefixCls, ...other} = this.props;
         const styleClass = classNames(
             prefixCls, className,
             {
@@ -24,10 +24,11 @@ export default class ButtonNavigationItem extends React.PureComponent<ButtonNavi
             },
         );
         const otherProps = getOtherProperties(other, ['onClick']);
+        const seIcon = selectedIcon?selectedIcon:icon;
         return (
             <Button className={styleClass} onClick={this.handleClick} {...otherProps}>
                 <span className={`${prefixCls}-inner`}>
-                    {icon}
+                    {active?seIcon:icon}
                     <span>{label}</span>
                     {children}
                 </span>
