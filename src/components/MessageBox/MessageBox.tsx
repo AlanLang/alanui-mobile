@@ -84,7 +84,7 @@ export class MessageBox {
                         <div style={{padding:20}}>
                             {message}
                             {type === 'prompt' ? (
-                                <Inputtext style={{marginTop:18}} type={inputType} placeholder={placeholder} ref={this.getRef}/>) : null}
+                                <Inputtext autoFocus={true} style={{marginTop:18}} type={inputType} placeholder={placeholder} ref={this.getRef}/>) : null}
                         </div>
                         <div className="MessageBox-btn-group">
                             {showCancelButton ? (<button
