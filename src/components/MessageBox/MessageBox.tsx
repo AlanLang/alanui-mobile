@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import Message from '../Message';
+import Inputtext from '../Inputtext'
 import {ZoomIn} from '../Transitions';
 import {MessageBoxProps} from './PropsType';
 
@@ -31,16 +32,30 @@ export class MessageBox {
         this.currentItem = this.create();
     }
 
+    componentDidMount () {
+        console.log(this.props)
+    }
+
     handleClose = () => {
         messageInstance.remove(this.currentItem.key);
+        if(this.props.onCancle){
+            (this.props.onCancle as () => void)();
+        }
     }
 
     handleConfirm = () => {
-        messageInstance.remove(this.currentItem.key);
+        let canClose = true;
         if (this.props.type === 'prompt') {
             if (this.props.onConfirm) {
-                (this.props.onConfirm as (event: any) => void)(this.inputNode.value);
+                canClose = (this.props.onConfirm as (event: any) => boolean)(this.inputNode.state.value);
             }
+        }else{
+            if (this.props.onConfirm) {
+                canClose = (this.props.onConfirm as () => boolean)();
+            }
+        }
+        if(canClose){
+            messageInstance.remove(this.currentItem.key);
         }
     }
 
@@ -66,10 +81,10 @@ export class MessageBox {
                         {title ? (<div className="MessageBox-header">
                             <div className="MessageBox-header-title">{title}</div>
                         </div>) : null}
-                        <div className="MessageBox-content">
+                        <div style={{padding:20}}>
                             {message}
                             {type === 'prompt' ? (
-                                <input type={inputType} placeholder={placeholder} ref={this.getRef}/>) : null}
+                                <Inputtext style={{marginTop:18}} type={inputType} placeholder={placeholder} ref={this.getRef}/>) : null}
                         </div>
                         <div className="MessageBox-btn-group">
                             {showCancelButton ? (<button

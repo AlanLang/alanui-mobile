@@ -4,6 +4,8 @@ import {BaseProps} from '../../src/components/common/BaseProps';
 import Button from '../../src/components/Button';
 import MessageBox from '../../src/components/MessageBox';
 import Spin from '../../src/components/Spin';
+import Toast from '../../src/components/Toast'
+
 import Progress from '../../src/components/Progress';
 import {Content} from '../../src/components/Page';
 
@@ -22,6 +24,17 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
         MessageBox.confirm({
             title: '提示',
             message: '这是一个Confirm提示框!',
+            cancelButtonText:'算了',
+            onConfirm:()=>{
+                Toast.show({
+                    message:`您点击了确定`
+                })
+            },
+            onCancle:()=>{
+                Toast.show({
+                    message:`您点击了取消`
+                })
+            }
         });
     }
 
@@ -29,6 +42,20 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
         MessageBox.prompt({
             title: '提示',
             message: '这是一个Prompt提示框!',
+            placeholder:'请输入',
+            onConfirm:(value)=>{
+                if(value){
+                    Toast.show({
+                        message:`您输入的是：${value}`
+                    })
+                    return true;
+                }else{
+                    Toast.show({
+                        message:`请输入内容`
+                    })
+                    return false;
+                }
+            },
         });
     }
 

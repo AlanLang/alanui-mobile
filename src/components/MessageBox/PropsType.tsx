@@ -11,6 +11,7 @@ export interface MessageBoxProps {
     showCancelButton?: boolean;
     title?: React.ReactNode | string;
     type?: string;
-    onConfirm?: (event: any) => void;
+    onConfirm?: (event?: any) => boolean;
     onClose?: (event: any) => void;
+    onCancle?:() => void;
 }
