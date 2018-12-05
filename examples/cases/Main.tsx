@@ -84,11 +84,7 @@ export default class Main extends React.PureComponent<any, MainState> {
 
         const menus = [
             {
-                text: 'Grid',
-            }, {
-                text: 'Buttons',
-            }, {
-                text: 'Lists',
+                text: '返回首页',
             },
         ];
         this.menus = MENUS.filter((menu: any) => {
@@ -115,6 +111,7 @@ export default class Main extends React.PureComponent<any, MainState> {
                                             activeClassName="active"
                                         >
                                             {menu.name}
+                                            <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>{menu.text}</span>
                                         </NavLink>
                                     </ListItemText>
                                 </ListItem>
@@ -170,7 +167,9 @@ export default class Main extends React.PureComponent<any, MainState> {
                             menus.map((menu, index) => (
                                 <ListItem key={index.toString()}>
                                     <ListItemText>
+                                    <NavLink to="/components/overview">
                                         {menu.text}
+                                    </NavLink>
                                     </ListItemText>
                                 </ListItem>
                             ))

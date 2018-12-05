@@ -30,6 +30,7 @@ export default class OverviewCase extends React.PureComponent<OverviewCaseProps,
                                 <Icon icon={menu.icon}/>
                                 <ListItemText>
                                     {menu.name}
+                                    <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>{menu.text}</span>
                                 </ListItemText>
                                 <ListItemAction>
                                     <Icon icon="chevron_right"/>

@@ -17,6 +17,7 @@ export default class Themes extends React.PureComponent<ThemesProps, {}> {
         const styleClass = classNames(
             prefixCls, className,
         );
+        const useCss = `<link rel="stylesheet" href="https://unpkg.com/alanui-mobile/dist/alanui-mobile.min.css">`
         const varCode = `$defaultColor: rgba(0, 0, 0, .87);
 
 $primary: #2196f3;
@@ -150,7 +151,17 @@ $timelineCircleColor: #2185d0;
 // Tree
 $treeActiveColor: $primary;`;
 
-        const css = `@import 'custom-theme';
+        const useScss = `
+// 安装sass-loader
+npm install sass-loader node-sass --save-dev
+// 在webpack配置sass-loader
+
+// alanui-mobile 组件样式库
+@import '~alanui-mobile/lib/scss/alanui-mobile';`;
+
+        const css = `
+@import 'custom-theme';
+
 // alanui-mobile 组件样式库
 @import '~alanui-mobile/lib/scss/alanui-mobile';`;
 
@@ -161,6 +172,10 @@ $treeActiveColor: $primary;`;
                     <p>
                         通过<code className="code-inline">webpack</code>工具可以实现自定义主题样式。
                     </p>
+                    <h2>引用编译好的css</h2>
+                    <HighlightCode>{useCss}</HighlightCode>
+                    <h2>引用原始sass</h2>
+                    <HighlightCode>{useScss}</HighlightCode>
                     <h2>样式变量</h2>
                     <p>
                         <span className="text-bold">alanui-mobile</span>的样式使用了

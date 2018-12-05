@@ -28,7 +28,7 @@ export default class Introduce extends React.PureComponent<IntroduceProps, any> 
 	            			<div className="index-content">基于Material Design的React移动组件库</div>
 	            			<div className="index-buttons">
 	            				<Button size="lg" theme="success" to="#/docs/getting-started">开始</Button>
-	        					<Button size="lg" className="margin-left-20" to="#/components/overview">示例</Button>
+                                <Button size="lg" className="margin-left-20" to="#/components/overview">示例</Button>
 	            			</div>
 	            		</div>
             		</div>

@@ -924,6 +924,22 @@ p .code-inline {
   height: 100%;
   flex:0.5;  
 }
+@media screen and (max-width: 900px){
+  .home-right{display: none;}
+  .home-left{
+    display: block;
+    width: 100%;
+    padding:0px;
+  }
+  .home-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+  }
+}
+
 .home-right{
   flex:0.5;
   background: url(./assets/background.png);

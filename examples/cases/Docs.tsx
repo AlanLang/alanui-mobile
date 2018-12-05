@@ -199,9 +199,19 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                 </NavLink>
                             </ListItemText>
                         </ListItem>
+                        <ListItem>
+                            <ListItemText>
+                                <NavLink
+                                    to="/docs/themes"
+                                    activeClassName="active"
+                                >
+                                    定制主题
+                                </NavLink>
+                            </ListItemText>
+                        </ListItem>
                     </List>
                     <AccordionGroup closeOthers={true}>
-                        <Accordion header="Style">
+                        <Accordion header="布局">
                             <List>
                                 <ListItem>
                                     <ListItemText>
@@ -210,26 +220,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                             activeClassName="active"
                                         >
                                             Grid
-                                        </NavLink>
-                                    </ListItemText>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText>
-                                        <NavLink
-                                            to="/docs/themes"
-                                            activeClassName="active"
-                                        >
-                                            Theme
-                                        </NavLink>
-                                    </ListItemText>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText>
-                                        <NavLink
-                                            to="/docs/icon"
-                                            activeClassName="active"
-                                        >
-                                            Icons
+                                            <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>布局</span>
                                         </NavLink>
                                     </ListItemText>
                                 </ListItem>
@@ -240,6 +231,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                             activeClassName="active"
                                         >
                                             Paper
+                                            <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>阴影面板</span>
                                         </NavLink>
                                     </ListItemText>
                                 </ListItem>
@@ -257,6 +249,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                                         activeClassName="active"
                                                     >
                                                         {menu.name}
+                                                        <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>{menu.text}</span>
                                                     </NavLink>
                                                 </ListItemText>
                                             </ListItem>);
@@ -275,6 +268,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                             activeClassName="active"
                                         >
                                             Ripple
+                                            <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>水波纹</span>
                                         </NavLink>
                                     </ListItemText>
                                 </ListItem>
@@ -285,6 +279,7 @@ export class Docs extends React.PureComponent<any, DocsState> {
                                             activeClassName="active"
                                         >
                                             Transitions
+                                            <span style={{display:"inlie-block",marginLeft:12,color:"#858585",fontSize:"12px"}}>动画</span>
                                         </NavLink>
                                     </ListItemText>
                                 </ListItem>

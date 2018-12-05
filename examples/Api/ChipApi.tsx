@@ -157,12 +157,12 @@ export default class ChipCase extends React.PureComponent< ChipCaseProps, any> {
         return (
             <Content className={styleClass}>
                 <PageView
-                    title="Chip 面包屑导航"
+                    title="Chip 标签碎片"
                     code={this.getCode()}
                     data={data}
                     app="适用平台：WEB"
                     frameUrl="#/components/chip"
-                    description="面包屑导航。"
+                    description="标签碎片。"
                 />
                 <div className="padding-left-20 padding-right-20">
                     <h3>ChipNode</h3>
