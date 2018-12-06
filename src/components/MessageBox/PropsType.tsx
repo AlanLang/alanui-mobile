@@ -4,6 +4,8 @@ export interface MessageBoxProps {
     delay?: number;
     confirmButtonText?: React.ReactNode | string;
     cancelButtonText?: React.ReactNode | string;
+    confirmStyle?:object;
+    cancleStyle?:object;
     inputType?: string;
     message: React.ReactNode | string;
     placeholder?: string;
@@ -11,7 +13,7 @@ export interface MessageBoxProps {
     showCancelButton?: boolean;
     title?: React.ReactNode | string;
     type?: string;
-    onConfirm?: (event?: any) => boolean;
+    onConfirm?: (event?: any) => void;
     onClose?: (event: any) => void;
     onCancle?:() => void;
 }

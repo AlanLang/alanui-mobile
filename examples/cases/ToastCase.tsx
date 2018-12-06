@@ -22,6 +22,12 @@ export default class ToastCase extends React.PureComponent<ToastCaseProps, Toast
             message: '提示信息',
         });
     }
+    handleErrorClick = ()=>{
+        Toast.show({
+            message: '提示信息',
+            type:'error',
+        });
+    }
 
     render() {
         const {className, ...other} = this.props;
@@ -32,7 +38,8 @@ export default class ToastCase extends React.PureComponent<ToastCaseProps, Toast
         return (
             <Content className={styleClass} {...other}>
                 <div className="CasePanel">
-                    <Button onClick={this.handleClick}>点击弹出 Toast</Button>
+                    <Button onClick={this.handleClick}>点击弹出Toast</Button>
+                    <Button onClick={this.handleErrorClick}>error</Button>
                 </div>
             </Content>
         );

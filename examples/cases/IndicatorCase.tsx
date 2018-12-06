@@ -22,7 +22,7 @@ export default class IndicatorCase extends React.PureComponent<IndicatorCaseProp
     }
 
     openSpinner = () => {
-        Indicator.show({type: 'circleLine'});
+        Indicator.show({type: 'circleLine',delay:3000});
     }
 
     openIndicatorWithText = () => {

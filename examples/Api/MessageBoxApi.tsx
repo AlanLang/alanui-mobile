@@ -55,7 +55,7 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
     }
 
     handleOpenPrompt = () => {
-        MessageBox.prompt({
+        const mess = MessageBox.prompt({
             title: '提示',
             message: '这是一个Prompt提示框!',
             placeholder:'请输入',
@@ -64,12 +64,11 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
                     Toast.show({
                         message:\`您输入的是：\${value}\`
                     })
-                    return true;
+                    MessageBox.close(mess)
                 }else{
                     Toast.show({
                         message:\`请输入内容\`
                     })
-                    return false;
                 }
             },
         });
@@ -115,7 +114,8 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
             </Content>
         );
     }
-}`;
+}
+`;
     }
 
     getFields() {
@@ -189,6 +189,16 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
                 type: 'React.ReactNode | string',
                 default: '取消',
             },{
+                attr: 'confirmStyle',
+                desc: '确定按钮的样式',
+                type: 'object',
+                default: '-',
+            }, {
+                attr: 'cancleStyle',
+                desc: '取消按钮的样式',
+                type: 'object',
+                default: '-',
+            },{
                 attr: 'title',
                 desc: '标题',
                 type: 'React.ReactNode | String',
@@ -210,7 +220,7 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
                 default: '-',
             },{
                 attr: 'onConfirm',
-                desc: '点击确定的回调函数(函数返回true则关闭弹窗，返回false则保持弹窗)',
+                desc: '点击确定的回调函数',
                 type: 'Function',
                 default: '-',
             }],
@@ -238,8 +248,12 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
                     <p>Prompt</p>
                 </div>
                 <div className="padding-left-20 padding-right-20">
-                    <h3>MessageBox.close()</h3>
-                    <p>Close</p>
+                    <h3>MessageBox.close(m:MessageBox)</h3>
+                    <p>关闭指定消息框</p>
+                </div>
+                <div className="padding-left-20 padding-right-20">
+                    <h3>MessageBox.closeAll()</h3>
+                    <p>关闭所有消息框</p>
                 </div>
             </Content>
         );

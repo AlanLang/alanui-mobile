@@ -37,24 +37,21 @@ export class MessageBox {
     }
 
     handleClose = () => {
-        messageInstance.remove(this.currentItem.key);
         if(this.props.onCancle){
             (this.props.onCancle as () => void)();
+        }else{
+            messageInstance.remove(this.currentItem.key);
         }
     }
 
     handleConfirm = () => {
-        let canClose = true;
         if (this.props.type === 'prompt') {
             if (this.props.onConfirm) {
-                canClose = (this.props.onConfirm as (event: any) => boolean)(this.inputNode.state.value);
+                (this.props.onConfirm as (event: any) => void)(this.inputNode.state.value);
             }
+        }else if (this.props.onConfirm){
+            (this.props.onConfirm as () => void)();
         }else{
-            if (this.props.onConfirm) {
-                canClose = (this.props.onConfirm as () => boolean)();
-            }
-        }
-        if(canClose){
             messageInstance.remove(this.currentItem.key);
         }
     }
@@ -68,7 +65,7 @@ export class MessageBox {
         const {
             inputType = 'text', confirmButtonText = '确认', cancelButtonText = '取消',
             type, title, message, onClose, placeholder = '',
-            showCancelButton, showConfirmButton, visible,
+            showCancelButton, showConfirmButton, visible,confirmStyle,cancleStyle
         }: any = props;
         props.message = (
             <ZoomIn in={visible}>
@@ -90,12 +87,14 @@ export class MessageBox {
                             {showCancelButton ? (<button
                                 className="MessageBox-btn-cancel"
                                 onClick={this.handleClose}
+                                style={cancleStyle}
                             >
                                 {cancelButtonText}
                             </button>) : null}
                             {showConfirmButton ? (<button
                                 className="MessageBox-btn-confirm"
                                 onClick={this.handleConfirm}
+                                style={confirmStyle}
                             >
                                 {confirmButtonText}
                             </button>) : null}
@@ -134,10 +133,15 @@ export default {
         props.showConfirmButton = true;
         return new MessageBox({...props});
     },
-    close() {
+    close(e:MessageBox) {
+        if (messageInstance) {
+            messageInstance.remove(e.currentItem.key);
+        }
+    },
+    closeAll(){
         if (messageInstance) {
             messageInstance.clearAll();
             messageInstance = null;
         }
-    },
+    }
 };

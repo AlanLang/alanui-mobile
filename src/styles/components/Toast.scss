@@ -16,25 +16,6 @@ $toast-prefix: Toast;
     max-width: 300px;
     font-size: 14px;
   }
-
-  .#{$toast-prefix}-item {
-    &.#{$toast-prefix}-info {
-      background: $info;
-      color: #fff;
-    }
-    &.#{$toast-prefix}-success {
-      background: $success;
-      color: #fff;
-    }
-    &.#{$toast-prefix}-warning {
-      background: $warning;
-      color: #fff;
-    }
-    &.#{$toast-prefix}-error {
-      background: $error;
-      color: #fff;
-    }
-  }
 }
 
 .#{$toast-prefix}-group {
@@ -53,5 +34,29 @@ $toast-prefix: Toast;
   .#{$toast-prefix}-bottom.MessageItem {
     bottom: 50px;
     transform: translate3d(-50%, 0, 0);
+  }
+  .#{$toast-prefix}-info{
+    div{
+      background: $info;
+      color: #fff;
+    }
+  }
+  .#{$toast-prefix}-warning{
+    div{
+      background: $warning;
+      color: #fff;
+    }
+  }
+  .#{$toast-prefix}-success{
+    div{
+      background: $success;
+      color: #fff;
+    }
+  }
+  .#{$toast-prefix}-error{
+    div{
+      background: $error;
+      color: #fff;
+    }
   }
 }

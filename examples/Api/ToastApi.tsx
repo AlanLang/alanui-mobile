@@ -15,44 +15,52 @@ export default class ToastApi extends React.PureComponent<ToastApiProps, {}> {
     getCode() {
         return `import * as React from 'react';
 import * as classNames from 'classnames';
-import {BaseProps} from '../components/common/BaseProps';
-import Button from '../components/Button';
-import Toast from '../components/Toast';
-import {Content} from '../components/Page';
+import {BaseProps} from '../../src/components/common/BaseProps';
+import Button from '../../src/components/Button';
+import Toast from '../../src/components/Toast';
+import {Content} from '../../src/components/Page';
 
 interface ToastCaseProps extends BaseProps {
-    messages?: Array< object>
+    messages?: Array<object>;
 }
 
 interface ToastCaseState {
-    messages: Array< object>
+    messages: Array<object>;
 }
 
 export default class ToastCase extends React.PureComponent<ToastCaseProps, ToastCaseState> {
     state: ToastCaseState = {
-        messages: []
+        messages: [],
     };
     handleClick = () => {
         Toast.show({
-            message: '提示信息'
+            message: '提示信息',
         });
-    };
+    }
+    handleErrorClick = ()=>{
+        Toast.show({
+            message: '提示信息',
+            type:'error',
+        });
+    }
 
     render() {
         const {className, ...other} = this.props;
         const styleClass = classNames(
             'ToastCase',
-            className
+            className,
         );
         return (
             <Content className={styleClass} {...other}>
                 <div className="CasePanel">
-                    <Button onClick={this.handleClick}>点击弹出 Toast</Button>
+                    <Button onClick={this.handleClick}>点击弹出Toast</Button>
+                    <Button onClick={this.handleErrorClick}>error</Button>
                 </div>
             </Content>
         );
     }
-}`;
+}
+`;
     }
 
     getFields() {

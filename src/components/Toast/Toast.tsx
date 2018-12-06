@@ -17,8 +17,9 @@ export class Toast {
 
     constructor(props: any) {
         const position = props.position ? props.position : 'center';
-        props.className = `Toast Toast-${position}`;
-        this.props = props;
+        const {type} = props
+        props.className = `Toast Toast-${position} Toast-${type}`;
+        this.props = props;        
         toastInstance = getToastInstance({
             hideBackdrop: true,
             className: 'Toast-group',

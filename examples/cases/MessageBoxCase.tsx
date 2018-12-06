@@ -39,7 +39,7 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
     }
 
     handleOpenPrompt = () => {
-        MessageBox.prompt({
+        const mess = MessageBox.prompt({
             title: '提示',
             message: '这是一个Prompt提示框!',
             placeholder:'请输入',
@@ -48,12 +48,11 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
                     Toast.show({
                         message:`您输入的是：${value}`
                     })
-                    return true;
+                    MessageBox.close(mess)
                 }else{
                     Toast.show({
                         message:`请输入内容`
                     })
-                    return false;
                 }
             },
         });

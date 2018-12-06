@@ -33,7 +33,7 @@ export class Indicator {
                     classNames(['Indicator-item'])
                 }
             >
-                <Spin size={size} type={type}/>
+                <Spin size={size} type={type} color="#fff"/>
                 <div className="Indicator-content">{message}</div>
             </div>
         );
