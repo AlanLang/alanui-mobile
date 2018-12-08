@@ -15,40 +15,44 @@ export default class FabButtonApi extends React.PureComponent<FabButtonApiProps,
     getCode() {
         return `import * as React from 'react';
 import * as classNames from 'classnames';
-import {BaseProps&} from '../components/common/BaseProps';
-import ActionSheet from '../components/ActionSheet'
-import {Content&} from '../components/Page';
-import Button from '../components/Button';
+import {BaseProps} from '../../src/components/common/BaseProps';
+import FabButton from '../../src/components/FabButton';
+import Icon from '../../src/components/Icon/Icon';
+import {Content} from '../../src/components/Page';
 
-interface ActionSheetCaseProps extends BaseProps {}
+interface FabButtonCaseProps extends BaseProps {
+}
 
-export default class ActionSheetCase extends React.PureComponent< ActionSheetCaseProps, {}> {
-
-    handleClick = () => {
-        ActionSheet.show({
-            buttons: [{
-                text: 'Button1'
-            }, {
-                text: 'Button2'
-            }],
-            cancel: true
-        })
+export default class FabButtonCase extends React.PureComponent<FabButtonCaseProps, {}> {
+    static defaultProps = {
+        prefixCls: 'bm-FabButtonCase',
     };
 
     render() {
-        const {className} = this.props;
+        const {className, prefixCls} = this.props;
         const styleClass = classNames(
-             'ActionSheetCase', className
+            prefixCls, className,
         );
         return (
             <Content className={styleClass}>
                 <div className="CasePanel">
-                    <Button theme="primary" onClick={this.handleClick}>Show Action Sheet</Button>
+                    <FabButton reverse={true} icon={(<Icon icon="add"/>)}>
+                        <Icon icon="thumb_up"/>
+                        <Icon icon="face"/>
+                        <Icon icon="mail"/>
+                    </FabButton>
+                    <FabButton type="circle" position="center" icon={(<Icon icon="add"/>)}>
+                        <Icon icon="accessible"/>
+                        <Icon icon="face"/>
+                        <Icon icon="thumb_up"/>
+                        <Icon icon="mail"/>
+                    </FabButton>
                 </div>
             </Content>
         );
     }
-}`;
+}
+`;
     }
 
     getFields() {
