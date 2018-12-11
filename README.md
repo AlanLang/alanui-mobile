@@ -5,7 +5,7 @@
 一共拥有50多个组件，已为你需要在项目中使用的很多功能性组件做好准备。
 
 [详细介绍](https://alanui-mobile.netlify.com)
-
+![](http://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/18-12-11/47345666.jpg)
 ### 快速上手
 
 **npm**
