@@ -95,6 +95,9 @@ export default class Message extends React.PureComponent<MessageProps, MessageSt
     }
 
     handleClose = () => {
+        if(!this.props.hideBackdrop){
+            return;
+        }
         const messages = [...this.state.messages];
         if (messages.length > 0) {
             this.remove(messages[messages.length - 1].key);
@@ -117,7 +120,7 @@ export default class Message extends React.PureComponent<MessageProps, MessageSt
         const messagesChildren = this.getMessageChildren();
         return (
             <div className={styleClass}>
-                {(messages.length > 0 && hideBackdrop) ?
+                {(messages.length > 0) ?
                     <div onClick={this.handleClose} className="Message-mask"/> : null}
                 {messagesChildren}
             </div>

@@ -17,6 +17,7 @@ export default class MessageBoxCase extends React.PureComponent<MessageBoxCasePr
         MessageBox.alert({
             title: '提示',
             message: '这是一个Alert提示框!',
+            hideBackdrop:false
         });
     }
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface MessageBoxProps {
     delay?: number;
+    hideBackdrop?:true|false;
     confirmButtonText?: React.ReactNode | string;
     cancelButtonText?: React.ReactNode | string;
     confirmStyle?:object;

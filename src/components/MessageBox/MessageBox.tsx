@@ -9,7 +9,8 @@ let messageInstance: any;
 
 const getMessageInstance = (props: any) => {
     if (messageInstance) {
-        return messageInstance;
+        messageInstance.clearAll();
+        //return messageInstance;
     }
     return Message.create({...props});
 };
@@ -24,8 +25,9 @@ export class MessageBox {
         props.className = 'MessageBox';
         props.visible = true;
         this.props = props;
+        const hideBackdrop = props.hideBackdrop == undefined?true:props.hideBackdrop;
         messageInstance = getMessageInstance({
-            hideBackdrop: true,
+            hideBackdrop: hideBackdrop,
             className: 'MessageBox-group',
             onClose: props.onClose || (() => false),
         });
