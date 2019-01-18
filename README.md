@@ -1,4 +1,5 @@
 ## material-ui-mobile 是一个基于Material Design的React移动组件库
+[![NPM](https://nodei.co/npm/alanui-mobile.png)](https://nodei.co/npm/alanui-mobile/)
 
 ### 丰富强大的组件
 
